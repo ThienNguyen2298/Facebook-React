@@ -1,0 +1,16 @@
+.widgets {
+    width: 25%;
+    /*flex: 1;*/
+    position: fixed;
+    right: 0;
+}
+.widgets__contact {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.widgets__contact > h3 {
+    flex: 1;
+    color: gray;
+}

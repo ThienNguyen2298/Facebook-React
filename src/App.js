@@ -1,24 +1,30 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import Header from './components/Header/Header';
+import Sidebar from './components/Sidebar/Sidebar';
+import Feed from './components/Feed/Feed';
+import Widgets from './components/Widgets/Widgets';
+import Login from './components/Login/Login';
+import { useStateValue } from './contextApi/StateProvider';
 
 function App() {
+  const [{user}, dispatch] = useStateValue();
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    //BEM
+    <div className="app">
+      {/*https://www.youtube.com/watch?v=B-kxUMHBxNo*/}
+      {
+        !user ? (<Login></Login>) : (
+        <>
+          <Header></Header>
+          <div className="app__body">
+            <Sidebar></Sidebar>
+            <Feed></Feed>
+            <Widgets></Widgets>
+          </div>
+        </>)
+      }
     </div>
   );
 }

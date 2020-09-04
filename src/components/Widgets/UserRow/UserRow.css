@@ -1,0 +1,12 @@
+.userRow {
+    display: flex;
+    align-items: center;
+    padding: 8px;
+}
+.userRow:hover {
+    background-color: lightgray;
+    border-radius: 10px;
+}
+.userRow > h4 {
+    margin-left: 15px;
+}
